@@ -1,0 +1,31 @@
+name: Publish Event to Facebook Page
+# Currently designed to fail.
+on:
+  # Warning: Only push to main if you want the result published on Facebook.
+  push:
+    branches: [ main ]
+  # Information: Make sure pull requests pass consistency tests before merging to main
+  pull_request:
+    branches: [ main ]
+  # Manual from event->actions->event-to-fb
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Testing
+        run: echo "No test for consistency" && exit 1
+
+      - name: Publishing
+        run: |
+          echo "Fail fast if event already exists"
+          echo "Authenticate to FB"
+          echo "Create event"
+          echo "Publish event"
+          echo "Invite people"
+          exit 2
