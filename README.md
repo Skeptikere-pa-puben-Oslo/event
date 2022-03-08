@@ -1,2 +1,2 @@
-# event
-Events planned by SppO in Oslo
+# Skeptikertreff
+Events planned by SppO in Oslo.
